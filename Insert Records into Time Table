@@ -1,0 +1,3 @@
+for i, row in time_df.iterrows():
+    cur.execute(time_table_insert, list(row))
+    conn.commit()
