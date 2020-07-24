@@ -1,0 +1,12 @@
+read_files = glob.glob("/Users/gaochengxi/Documents/python/data/Log_data2/*.json")      
+#file = open("/Users/gaochengxi/Documents/python/data/Log_data2/*.json"", 'r', encoding='utf-8')
+papers = []
+for f in read_files:
+    file = open(f, 'r', encoding='utf-8')
+    for line in file.readlines():
+        dic = json.loads(line)
+        papers.append(dic)
+
+
+with open('merge_Log_File.json', 'w') as output_file:
+    json.dump(papers, output_file)
